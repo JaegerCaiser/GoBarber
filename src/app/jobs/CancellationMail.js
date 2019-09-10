@@ -11,7 +11,7 @@ class CancellationMail {
   async handle({ data }) {
     const { appointment } = data;
 
-    console.log('A fila está processando');
+    console.log(`Enviando e-mail para ${appointment.provider.email}`);
 
     await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
